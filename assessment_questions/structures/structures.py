@@ -18,3 +18,16 @@ def solution(structures):
         return total_cost
 
     return min(calculate_cost(True), calculate_cost(False))
+
+# Test Cases
+# 1 & 2: Original Images
+print(f"Original 1 ([1,4,3,2]): {solution([1, 4, 3, 2])}") # 4
+print(f"Original 2 ([5,7,9,4,11]): {solution([5, 7, 9, 4, 11])}") # 9
+# 3: Zero cost test
+print(f"Test 3 (Already Stepwise): {solution([10, 11, 12, 13])}") # 0
+# 4: Descending zero cost
+print(f"Test 4 (Already Descending): {solution([5, 4, 3, 2])}") # 0
+# 5: Large Scale
+import random
+large_structs = [random.randint(1, 1000) for _ in range(100000)]
+print(f"Test 5 (100k structures): {solution(large_structs)}")
